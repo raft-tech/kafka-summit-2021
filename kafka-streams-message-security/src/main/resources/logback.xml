@@ -1,0 +1,11 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{"yyyy-MM-dd'T'HH:mm:ss,SSSXXX", UTC} - %-5level - %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="org.apache.kafka" level="INFO" />
+    <logger name="tech.goraft.kafka.stream.KafkaStreamsDemo" level="DEBUG">
+        <appender-ref ref="STDOUT" />
+    </logger>
+</configuration>

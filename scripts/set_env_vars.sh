@@ -1,0 +1,4 @@
+export BOOTSTRAP_SERVERS=
+export KAFKA_TOPIC=
+export SASL_USERNAME=
+export SASL_PASSWORD=
