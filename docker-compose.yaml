@@ -26,7 +26,7 @@ services:
       - ./configs/zookeeper_server_jaas.conf:/etc/kafka/zookeeper_server_jaas.conf
 
   kafka:
-    image: ryansalcido/kafka-opa:latest
+    image: ghcr.io/raft-tech/kafka-summit-2021/kafka-opa
     hostname: kafka
     container_name: kafka
     depends_on:
@@ -82,7 +82,8 @@ services:
       - ./configs/controlcenter_client_jaas.conf:/etc/kafka/controlcenter_client_jaas.conf
 
   pii-datagen:
-    build: ./pii-datagen
+    image: ghcr.io/raft-tech/kafka-summit-2021/pii-datagen
+    # build: ./pii-datagen
     hostname: pii-datagen
     container_name: pii-datagen
     environment:
@@ -92,7 +93,8 @@ services:
       SASL_PASSWORD: admin-secret
 
   kafka-streams-bobjones:
-    build: ./kafka-streams-message-security
+    image: ghcr.io/raft-tech/kafka-summit-2021/kafka-streams-message-security
+    # build: ./kafka-streams-message-security
     hostname: kafka-streams-bobjones
     container_name: kafka-streams-bobjones
     environment:
@@ -104,7 +106,8 @@ services:
       SASL_PASSWORD: bobjones-secret
   
   kafka-streams-alicesmith:
-    build: ./kafka-streams-message-security
+    image: ghcr.io/raft-tech/kafka-summit-2021/kafka-streams-message-security
+    # build: ./kafka-streams-message-security
     hostname: kafka-streams-alicesmith
     container_name: kafka-streams-alicesmith
     environment:
@@ -116,7 +119,8 @@ services:
       SASL_PASSWORD: alicesmith-secret
 
   kafka-streams-johnhernandez:
-    build: ./kafka-streams-message-security
+    image: ghcr.io/raft-tech/kafka-summit-2021/kafka-streams-message-security
+    # build: ./kafka-streams-message-security
     hostname: kafka-streams-johnhernandez
     container_name: kafka-streams-johnhernandez
     environment:
