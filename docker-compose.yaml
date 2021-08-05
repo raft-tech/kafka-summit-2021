@@ -83,7 +83,6 @@ services:
 
   pii-datagen:
     image: ghcr.io/raft-tech/kafka-summit-2021/pii-datagen
-    # build: ./pii-datagen
     hostname: pii-datagen
     container_name: pii-datagen
     environment:
@@ -94,7 +93,6 @@ services:
 
   kafka-streams-bobjones:
     image: ghcr.io/raft-tech/kafka-summit-2021/kafka-streams-message-security
-    # build: ./kafka-streams-message-security
     hostname: kafka-streams-bobjones
     container_name: kafka-streams-bobjones
     environment:
@@ -107,7 +105,6 @@ services:
   
   kafka-streams-alicesmith:
     image: ghcr.io/raft-tech/kafka-summit-2021/kafka-streams-message-security
-    # build: ./kafka-streams-message-security
     hostname: kafka-streams-alicesmith
     container_name: kafka-streams-alicesmith
     environment:
@@ -120,7 +117,6 @@ services:
 
   kafka-streams-johnhernandez:
     image: ghcr.io/raft-tech/kafka-summit-2021/kafka-streams-message-security
-    # build: ./kafka-streams-message-security
     hostname: kafka-streams-johnhernandez
     container_name: kafka-streams-johnhernandez
     environment:

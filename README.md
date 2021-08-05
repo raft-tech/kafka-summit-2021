@@ -12,16 +12,17 @@ In our proposed presentation, we will provide a live demonstration that consists
 ## Objective
 The goal is to demonstrate how we can utilize [Open Policy Agent](https://www.openpolicyagent.org/) to provide fine-grained access-control for Kafka topics and the [Kafka Streams API](https://www.confluent.io/product/kafka-streams-api/) to filter outgoing PII messages based on the end user. The demo will show how three different Kafka users (`bobjones`, `alicesmith`, `johnhernandez`) will authenticate to the Kafka broker and receive different results while consuming from the same topic (`pii`).
 
+
 ## Technical Stack
 - Confluent v5.5.2 (ZooKeeper, Broker, Control Center)
 - Open Policy Agent
 - Python 3.8.11
 - Java 11
-- Maven 3.8.11
+- Maven 3.8.1
 
 
 ## Running via `Docker-Compose`
-The technical stack can be bootstrapped using the `docker-compose.yaml` file which starts up the following Docker containers:
+This demo is bootstrapped using the `docker-compose.yaml` file which starts up the following Docker containers:
 - Confluent (ZooKeeper, Broker, Control Center)
 - Open Policy Agent
 - PII fake data generator using Python
@@ -75,7 +76,7 @@ The [Rego query language](https://www.openpolicyagent.org/docs/latest/policy-lan
 
 
 ## How to Build/Run the Individual Applications
-If you want to go beyond just running the demo via `Docker-Compose`, the following sections will describe how to build and push the applications individually. Please verify the software defined in the [Technical Stack](#technical-stack) section is properly installed on your machine.
+If you want to go beyond what is provided in the demo, the following sections will describe how to build and push the applications individually. Please verify the software defined in the [Technical Stack](#technical-stack) section is properly installed on your machine.
 
 __Note__: If you want to test your new image with the original demo, be sure to replace the appropriate image in the [docker-compose.yaml](./docker-compose.yaml).
 
@@ -113,6 +114,7 @@ __Note__: If you want to test your new image with the original demo, be sure to 
     docker push [registry_name]/pii-datagen
     ```
 
+
 ### Kafka-Streams-Message-Security
 1. Change directory to `kafka-streams-message-security`:
     ```sh
@@ -126,3 +128,7 @@ __Note__: If you want to test your new image with the original demo, be sure to 
     ```sh
     docker push [registry_name]/kafka-streams-message-security
     ```
+
+
+## References
+- [Connecting Kafka with Open Policy Agent](https://github.com/open-policy-agent/contrib/tree/main/kafka_authorizer)
